@@ -1,0 +1,94 @@
+:root {
+    --jay-blue: #00549a;
+    --mp-fuchsia: #d61c5b;
+    --mp-tang: #f9763d;
+    --mp-light-blue: #dee5f0;
+}
+
+.btn-primary:disabled {
+    background-color: #6c757d;
+    border-color: #6c757d;
+}
+
+.webinar-container {
+    background-color: var(--mp-light-blue);
+}
+
+.gradient-bg {
+  position: relative;  
+  background: linear-gradient(135deg, rgba(91, 20, 153, 1) 0%, rgba(214, 28, 90, 1) 44%, rgba(249, 118, 61, 1) 100%);
+}
+
+.hero-text-wrapper {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto 0;
+  z-index: 2;
+}
+
+.hero-image {
+  position: relative;
+  z-index: 1;
+  opacity: 0.3;
+}
+
+.card-border {
+    border: solid 1px #cac6c1;
+    box-shadow: 0 0 0 6px #cac6c1;
+    outline: solid 5px #fff;
+}
+
+.grid-container {  
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, auto);
+    gap: 25px 25px;
+    grid-template-areas:
+      "info-container"
+      "registration-container"
+      "faq-container";
+}
+
+.info-container {  
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(2, auto);
+    gap: 25px 25px;
+    grid-template-areas:
+      "webinar-info"
+      "presenter-info";
+    grid-area: info-container;
+  }
+  
+.webinar-info { grid-area: webinar-info; }
+    
+.presenter-info { grid-area: presenter-info; }
+
+.registration-container { grid-area: registration-container; }
+
+.faq-container { grid-area: faq-container; }
+
+@media screen and (min-width:992px) {
+    .grid-container {  
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(2, auto);
+        gap: 25px 25px;
+        grid-auto-flow: row;
+        grid-template-areas:
+          "info-container info-container registration-container"
+          "faq-container faq-container registration-container";
+      }
+      
+      .info-container {  display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(2, auto);
+        gap: 25px 25px;
+        grid-auto-flow: row;
+        grid-template-areas:
+          "webinar-info"
+          "presenter-info";
+        grid-area: info-container;
+      }
+}
